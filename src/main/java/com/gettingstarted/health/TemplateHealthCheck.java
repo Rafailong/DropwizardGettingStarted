@@ -2,9 +2,6 @@ package com.gettingstarted.health;
 
 import com.codahale.metrics.health.HealthCheck;
 
-/**
- * Created by sergionearbpo on 9/8/14.
- */
 public class TemplateHealthCheck extends HealthCheck {
     private String template;
 

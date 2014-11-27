@@ -30,11 +30,13 @@ public class GettingStartedApplication extends Application<GettingStartedConfigu
                 gettingStartedConfiguration.getDefaultName(),
                 gettingStartedConfiguration.getTemplate()
         );
+        final HomeResource homeResource = new HomeResource();
         final TemplateHealthCheck templateHealthCheck = new TemplateHealthCheck(
                 gettingStartedConfiguration.getTemplate()
         );
 
         environment.healthChecks().register("template", templateHealthCheck);
         environment.jersey().register(helloWorldResource);
+        environment.jersey().register(homeResource);
     }
 }
