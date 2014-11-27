@@ -2,6 +2,7 @@ template: Hello, %s!
 defaultName: Stranger
 server:
     type: simple
+    applicationContextPath: /api
     connector:
         type: http
         port: 8080
