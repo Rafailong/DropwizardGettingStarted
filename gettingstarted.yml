@@ -1,5 +1,6 @@
 template: Hello, %s!
 defaultName: Stranger
+healtChecksPort: 8080
 server:
     type: simple
     applicationContextPath: /api

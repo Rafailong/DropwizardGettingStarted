@@ -1,13 +1,12 @@
 package com.gettingstarted;
 
-import com.gettingstarted.health.TemplateHealthCheck;
+import com.gettingstarted.health.*;
 import io.dropwizard.*;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.config.DefaultClientConfig;
 
-/**
- * Created by sergionearbpo on 9/8/14.
- */
 public class GettingStartedApplication extends Application<GettingStartedConfiguration> {
 
     public static void main(String[] args) throws Exception {
@@ -35,7 +34,15 @@ public class GettingStartedApplication extends Application<GettingStartedConfigu
                 gettingStartedConfiguration.getTemplate()
         );
 
+        // DefaultClientConfig conf = new DefaultClientConfig();
+        // Client client = Client.create(conf);
+        // final HomeResourceHealthCheck homeResourceHealthCheck = new HomeResourceHealthCheck(
+        //     client, 
+        //     gettingStartedConfiguration.getHealtChecksPort()
+        // );
+
         environment.healthChecks().register("template", templateHealthCheck);
+        // environment.healthChecks().register("HomeResource", homeResourceHealthCheck);
         environment.jersey().register(helloWorldResource);
         environment.jersey().register(homeResource);
     }

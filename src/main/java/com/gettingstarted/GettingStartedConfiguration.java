@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.*;
 import org.hibernate.validator.constraints.NotEmpty;
 
-/**
- * Created by sergionearbpo on 9/8/14.
- */
 public class GettingStartedConfiguration extends Configuration {
 
     @NotEmpty
@@ -14,6 +11,8 @@ public class GettingStartedConfiguration extends Configuration {
 
     @NotEmpty
     private String defaultName = "Strager";
+
+    private Long healtChecksPort;
 
     @JsonProperty
     public String getTemplate() {
@@ -33,5 +32,15 @@ public class GettingStartedConfiguration extends Configuration {
     @JsonProperty
     public void setDefaultName(String defaultName) {
         this.defaultName = defaultName;
+    }
+
+    @JsonProperty
+    public void setHealtChecksPort(Long port) {
+        this.healtChecksPort = port;
+    }
+
+    @JsonProperty
+    public Long getHealtChecksPort() {
+        return this.healtChecksPort;
     }
 }

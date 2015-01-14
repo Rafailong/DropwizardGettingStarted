@@ -18,6 +18,11 @@
             <artifactId>dropwizard-core</artifactId>
             <version>${dropwizard.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>1.17.1</version>
+        </dependency>
     </dependencies>
 
     <build>
